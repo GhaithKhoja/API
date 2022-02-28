@@ -2,6 +2,12 @@ import tornado.web
 import tornado.ioloop
 import pymysql
 
+# TO DO FILL THESE VALUES
+root_username = 'TODO' # replace if you have a different root user name
+user_password = 'TODO' # replace with your user's password
+database_name = 'TODO' # the name you give to your database
+table_name = 'TODO' # the name you give to your table
+
 class SPA(tornado.web.RequestHandler):
     def get(self):
 
@@ -9,14 +15,14 @@ class SPA(tornado.web.RequestHandler):
         db = pymysql.connect(
             host='127.0.0.1',
             port=3306,
-            user='ghaith', # replace if you have a different root user name
-            password='12345678', # replace with your user's password
-            db='todo' # the name you give to your database
+            user= root_username, 
+            password= user_password , 
+            db= database_name 
         )
         cursor = db.cursor()
 
         #Select all the current data in the database and display it
-        cursor.execute("SELECT * FROM list;")
+        cursor.execute(f"SELECT * FROM {table_name};")
         data = cursor.fetchall()
         items = data
 
@@ -36,9 +42,9 @@ class SPA(tornado.web.RequestHandler):
         db = pymysql.connect(
             host='127.0.0.1',
             port=3306,
-            user='ghaith', # replace if you have a different root user name
-            password='12345678', # replace with your user's password
-            db='todo' # the name you give to your database
+            user= root_username, # replace if you have a different root user name
+            password= user_password , # replace with your user's password
+            db= database_name # the name you give to your database
         )
         cursor = db.cursor()
 
@@ -54,7 +60,7 @@ class SPA(tornado.web.RequestHandler):
             #Add an entry to the list
             if command == "add":
                 try:
-                    cursor.execute(f"INSERT INTO list(Name) values ('{name}');")
+                    cursor.execute(f"INSERT INTO {table_name}(Name) values ('{name}');")
                 except Exception as e:
                     msg = e
                     print(e)
@@ -62,7 +68,7 @@ class SPA(tornado.web.RequestHandler):
             #Remove an entry from the list
             elif command == "delete":
                 try:
-                    cursor.execute(f"DELETE FROM list where Name='{name}';")
+                    cursor.execute(f"DELETE FROM {table_name} where Name='{name}';")
                 except Exception as e:
                     msg = e
                     print(e)
@@ -70,7 +76,7 @@ class SPA(tornado.web.RequestHandler):
             #Mark an entry as complete
             elif command == "check":
                 try:
-                    cursor.execute(f"UPDATE list SET Completed='Yes' WHERE Name='{name}';")
+                    cursor.execute(f"UPDATE {table_name} SET Completed='Yes' WHERE Name='{name}';")
                 except Exception as e:
                     msg = e
                     print(e)
@@ -78,7 +84,7 @@ class SPA(tornado.web.RequestHandler):
             #Mark an entry as incomplete
             elif command == "uncheck":
                 try:
-                    cursor.execute(f"UPDATE list SET Completed='No' WHERE Name='{name}';")
+                    cursor.execute(f"UPDATE {table_name} SET Completed='No' WHERE Name='{name}';")
                 except Exception as e:
                     msg = e
                     print(e)
@@ -89,7 +95,7 @@ class SPA(tornado.web.RequestHandler):
 
         #Commit changes to the database and select the data to display them
         db.commit()
-        cursor.execute("SELECT * FROM list;")
+        cursor.execute(f"SELECT * FROM {table_name};")
         data = cursor.fetchall()
         items = data
 
