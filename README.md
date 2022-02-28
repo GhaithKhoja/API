@@ -1,6 +1,6 @@
 # TODO List Build
 ## Introduction
-This is a simple todo list built using Tornado as backend and react/html/css as frontend. The database was implemented using SQL.
+This is a simple todo list built using Tornado as backend and React/HTML/CSS as frontend. The database was implemented using SQL.
 
 ## Setup Web Application
 ### Create and Start
