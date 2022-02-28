@@ -26,7 +26,7 @@ delete
 check
 uncheck
 ```
-To use commands with their entrys, use the text box on the top of the web application.
+To use commands with their entries, use the text box on the top of the web application.
 To gain more understanding about the functions of the commands and how to use them, Click the "help" button in the web application.
 
 ### Structure
