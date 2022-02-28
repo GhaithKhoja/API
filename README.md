@@ -1,6 +1,6 @@
-# TODO List Build
+# TODO List API Build
 ## Introduction
-This is a simple todo list built using Tornado as backend and react/html/css as frontend. The database was implemented using SQL.
+This is a simple todo list built using Tornado as backend and React/HTML/CSS as frontend. The database was implemented using SQL.
 
 ## Setup Web Application
 ### Create and Start
@@ -14,6 +14,10 @@ python3 main.py
 
 Which will create and create and and start the containers defined in the multi-container compose file.
 
+### Database
+
+The application needs a localhost database. To connect to your localhost database change the parameters in main.py where it says replace with user name/password.
+
 ### Connect
 
 Connect to the application in host computer by typing `http://localhost:8881` into a browser.
@@ -26,7 +30,7 @@ delete
 check
 uncheck
 ```
-To use commands with their entrys, use the text box on the top of the web application.
+To use commands with their entries, use the text box on the top of the web application.
 To gain more understanding about the functions of the commands and how to use them, Click the "help" button in the web application.
 
 ### Structure
