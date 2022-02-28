@@ -16,7 +16,7 @@ Which will create and create and and start the containers defined in the multi-c
 
 ### Database
 
-The application needs a localhost database. To connect to your localhost database change the parameters in main.py.
+The application needs a localhost database. To connect to your localhost database change the parameters in main.py where it says replace with user name/password.
 
 ### Connect
 
