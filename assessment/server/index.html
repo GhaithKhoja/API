@@ -1,0 +1,57 @@
+<html>
+   <head>
+      <title>TODO List</title>
+      <!-- CSS -->
+      <link rel="stylesheet" href="{{ static_url("css/style.css") }}">
+   </head>
+   <body>
+     <!-- SIMPLE HTML -->
+     <h1>TODO List</h1>
+     <h3>{{ msg }}</h3>
+     <form method="post">
+      <label for="command">Command:</label>
+      <input type="text" name="command"/>
+      <label for="name">Entry:</label>
+      <input type="text" name="name"/>
+      <input type="submit"/>
+      </form>
+     <table class="center">
+      <tr>
+        <th>Task Name</th>
+        <th>Completed</th>
+        <th>Creation Date</th>
+        <th>Last Edit Date</th>
+      </tr>
+      <!-- USE INPUTS FROM BACKEND -->
+      {% for item in items %}
+      <tr>
+        <th>{{ escape(item[0]) }}</th>
+        <th>{{ escape(item[1]) }}</th>
+        <th>{{ item[2] }}</th>
+        <th>{{ item[3] }}</th>
+      </tr>
+      {% end %}
+    </table>
+
+    <!-- REACT -->
+    <div class="welcome-back"></div>
+
+    <!-- SCRIPTS -->
+    <script
+      src="https://unpkg.com/react@16/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" src="{{ static_url("js/WelcomeBack.js") }}"></script>
+    <script type="text/babel" src="{{ static_url("js/CoolButton.js") }}"></script>
+
+    <script type="text/babel">
+      ReactDOM.render(<WelcomeBack />, document.querySelector(".welcome-back"));
+    </script>
+
+   </body>
+ </html>

@@ -1,0 +1,21 @@
+ body {
+   text-align: center;
+ }
+
+ ol {
+  text-align: center;
+  list-style-position: inside;
+}
+ 
+ table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
