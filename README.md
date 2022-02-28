@@ -14,6 +14,10 @@ python3 main.py
 
 Which will create and create and and start the containers defined in the multi-container compose file.
 
+### Database
+
+The application needs a localhost database. To connect to your localhost database change the parameters in main.py.
+
 ### Connect
 
 Connect to the application in host computer by typing `http://localhost:8881` into a browser.
