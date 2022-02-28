@@ -1,4 +1,4 @@
-# TODO List Build
+# TODO List API Build
 ## Introduction
 This is a simple todo list built using Tornado as backend and React/HTML/CSS as frontend. The database was implemented using SQL.
 
