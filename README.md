@@ -19,7 +19,7 @@ The static folder contains the CSS and JS used for React.
 
 ### Database
 
-The application needs a localhost database that is hosted on a mysql server. The database needs to be intilized with a table of the following structure:
+The application needs a localhost database that is hosted on a mysql server. The database needs to be initialized with a table of the following structure:
 
 | Field  | Type | Null | Key | Default | Extra
 | :---:  |:---: |:---: |:---:|:---:    | :---:  
@@ -50,7 +50,7 @@ table_name = 'TODO' # the name you give to your table
 ### Create and Start
 
 Set current directory to server folder, which contains main.py.
-Install the requirments from requirements.txt, Then run:
+Install the requirements from requirements.txt, Then run:
 
 ```bash
 python3 main.py
